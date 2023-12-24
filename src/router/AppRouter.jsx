@@ -7,6 +7,7 @@ import Hotels from "../pages/Hotels";
 import HotelDetail from "../pages/HotelDetail";
 import About from "../pages/About";
 import NotFound from "../pages/NotFound";
+import Buy from "../pages/Buy";
 
 const AppRouter = () => {
   return (
@@ -27,6 +28,7 @@ const AppRouter = () => {
           {/** //- araya kontrol mekanizması koyduk */}
           <Route path="" element={<Home />} />
           <Route path="hotels" element={<Hotels />} />
+          <Route path="buy" element={<Buy />} />
           <Route path="hoteldetail/:id" element={<HotelDetail />} />
           <Route path="about" element={<About />} />
           {/* //! burada eğer slash işareti kullanarak yazmak istersek pathi uzun

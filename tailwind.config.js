@@ -3,15 +3,18 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      colors:{
-        primary:"#AC87C5",
-        //- burada exted ettiğimizi tailwind classı gibi kullanabiliyoruz. 
-      }
+      fontFamily: {
+        inter: ["Inter", "san-serif"],
+      },
+
+      colors: {
+        primary: "#AC87C5",
+        //- burada exted ettiğimizi tailwind classı gibi kullanabiliyoruz.
+      },
     },
   },
   plugins: [],
-  darkMode: 'class',
+  darkMode: "class",
 
-  //- moda göre çalışır.
-  
+  // - moda göre çalışır.
 };

@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Hotels from "../pages/Hotels";
 import HotelDetail from "../pages/HotelDetail";
 import About from "../pages/About";
+import NotFound from "../pages/NotFound";
 
 const AppRouter = () => {
   return (
@@ -35,8 +36,11 @@ const AppRouter = () => {
           geri kalan kısma ne koymak istersek onu koyabiliriz. */}
         </Route>
 
-        <Route path="/" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
+
+
+      {/* //! routesun içerisinde direk olarak bir komponent çağıramayız bananın veya annenin kardeşi olarak bir komponent olarak çağırabiliriz. O nedenle gittik navbarı outletin üstünde verdik. Navbar footer scrollup gibi yapılar için..  Üst kısımda çağırabiliriz ama direk olarak routesun içerisinde çağıramayız.*/}
     </>
   );
 };

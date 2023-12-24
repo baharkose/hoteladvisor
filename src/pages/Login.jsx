@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
+import { AuthContext } from "../context/AutProvider";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  
+
+  // - useContext consuming - bunun için Autconteximizi export ile dışarı açmış olmamız lazım
+
+  const {login} = useContext(AuthContext) 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ email, pass });
+
+    // - kullanıcıdan gelen bilgileri şimdi nerde saklayacğız?  Bunun için en iyi adres context api bunun için bir contexte ihtiyacımız var. Kullanıcının bilgileri girip girmemesi bilgilerini bizim kullanmamız gerekiyor.
     if (email.toLowerCase() === "admin@aa.com" && pass === "admin") {
-    
+      //! - koşul doğru ise logine email ve pass bilgisini yolla.
+      //- bu olayın başlandığı nokta authProvider okumaya oradan başla
+      login({email, pass})
+
     } else {
       alert("kullanıcı bilgileri yanlış");
     }
@@ -71,7 +80,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="bg-main h-[44px] font-montserrat text-label text-white uppercase hover:opacity-90 rounded-[4px]"
+            className="btn-primary h-[44px] font-montserrat text-label text-white uppercase hover:opacity-90 rounded-[4px] text-center"
             onClick={(e) => handleSubmit(e)}
           >
             Sign In

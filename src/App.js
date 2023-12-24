@@ -1,9 +1,10 @@
-import "./App.css";
+import Navbar from "./components/Navbar"
 
 function App() {
   return (
     <>
-      <h1>Hotel Advisor</h1>
+    <Navbar/>
+      <h1 className="text-blue-400 text-lg">Hotel Advisor</h1>
     </>
   );
 }
